@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:inspiration_app_ui/theme.dart';
+import 'package:inspiration_app_ui/widget/best_design.dart';
+import 'package:inspiration_app_ui/widget/promo_card.dart';
 
 void main(List<String> args) {
   runApp(
@@ -121,92 +123,21 @@ class _HomePageState extends State<HomePage> {
                       child: ListView(
                         scrollDirection: Axis.horizontal,
                         children: [
-                          promoCard('assets/images/four.jpg'),
-                          promoCard('assets/images/three.jpg'),
-                          promoCard('assets/images/two.jpg'),
-                          promoCard('assets/images/one.jpg'),
+                          PromoCard('assets/images/four.jpg'),
+                          PromoCard('assets/images/three.jpg'),
+                          PromoCard('assets/images/two.jpg'),
+                          PromoCard('assets/images/one.jpg'),
                         ],
                       ),
                     ),
                     const SizedBox(
                       height: 20,
                     ),
-                    Container(
-                      height: 150,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20),
-                        image: const DecorationImage(
-                          image: AssetImage('assets/images/three.jpg'),
-                        ),
-                      ),
-                      child: Container(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                          gradient: LinearGradient(
-                            colors: [
-                              Colors.black.withOpacity(.6),
-                              Colors.black.withOpacity(.1),
-                            ],
-                            begin: Alignment.bottomRight,
-                            stops: const [
-                              0.3,
-                              0.9,
-                            ],
-                          ),
-                        ),
-                        child: Align(
-                          alignment: Alignment.bottomLeft,
-                          child: Padding(
-                            padding: const EdgeInsets.all(15),
-                            child: Text(
-                              'Best Design',
-                              style: TextStyle(
-                                color: whiteColor,
-                                fontSize: 20,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
+                    BestDesign(),
                   ],
                 ),
               ),
             ],
-          ),
-        ),
-      ),
-    );
-  }
-
-  Widget promoCard(image) {
-    return AspectRatio(
-      aspectRatio: 2.62 / 3,
-      child: Container(
-        margin: const EdgeInsets.only(
-          right: 15,
-        ),
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(20),
-          image: DecorationImage(
-            image: AssetImage(image),
-            fit: BoxFit.cover,
-          ),
-        ),
-        child: Container(
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(20),
-            gradient: LinearGradient(
-              colors: [
-                Colors.black.withOpacity(.6),
-                Colors.black.withOpacity(.1),
-              ],
-              begin: Alignment.topRight,
-              stops: const [
-                0.1,
-                0.9,
-              ],
-            ),
           ),
         ),
       ),
