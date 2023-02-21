@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:inspiration_app_ui/theme.dart';
 
 void main(List<String> args) {
   runApp(
@@ -21,15 +22,14 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromRGBO(244, 243, 243, 1),
+      backgroundColor: const Color.fromRGBO(244, 243, 243, 1),
       appBar: AppBar(
-        backgroundColor: Colors.white,
-        brightness: Brightness.light,
+        backgroundColor: whiteColor,
         elevation: 0,
         leading: IconButton(
-          icon: const Icon(
+          icon: Icon(
             Icons.menu,
-            color: Colors.black87,
+            color: blackColor,
           ),
           onPressed: () {},
         ),
@@ -41,9 +41,9 @@ class _HomePageState extends State<HomePage> {
             children: [
               Container(
                 width: double.infinity,
-                decoration: const BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.vertical(
+                decoration: BoxDecoration(
+                  color: whiteColor,
+                  borderRadius: const BorderRadius.vertical(
                     bottom: Radius.circular(30),
                   ),
                 ),
@@ -51,20 +51,20 @@ class _HomePageState extends State<HomePage> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const Text(
+                    Text(
                       'Find Your',
                       style: TextStyle(
-                        color: Colors.black87,
+                        color: blackColor,
                         fontSize: 25,
                       ),
                     ),
                     const SizedBox(
                       height: 5,
                     ),
-                    const Text(
+                    Text(
                       'Inspiration',
                       style: TextStyle(
-                        color: Colors.black,
+                        color: blackColor,
                         fontSize: 40,
                         fontWeight: FontWeight.bold,
                       ),
@@ -78,95 +78,95 @@ class _HomePageState extends State<HomePage> {
                         color: const Color.fromRGBO(244, 243, 243, 1),
                         borderRadius: BorderRadius.circular(15),
                       ),
-                      child: const TextField(
+                      child: TextField(
                         decoration: InputDecoration(
                           border: InputBorder.none,
                           prefixIcon: Icon(
                             Icons.search,
-                            color: Colors.black87,
+                            color: blackColor,
                           ),
                           hintText: "Search you're lokking for",
                           hintStyle: TextStyle(
-                            color: Colors.grey,
+                            color: greyColor,
                             fontSize: 15,
                           ),
                         ),
                       ),
                     ),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: 5,
+                  ],
+                ),
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 20,
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const Text(
+                      'Promo Today',
+                      style: TextStyle(
+                        fontSize: 15,
+                        fontWeight: FontWeight.bold,
                       ),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
+                    ),
+                    const SizedBox(
+                      height: 15,
+                    ),
+                    Container(
+                      height: 200,
+                      child: ListView(
+                        scrollDirection: Axis.horizontal,
                         children: [
-                          const Text(
-                            'Promo Today',
-                            style: TextStyle(
-                              fontSize: 15,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                          const SizedBox(
-                            height: 15,
-                          ),
-                          Container(
-                            height: 200,
-                            child: ListView(
-                              scrollDirection: Axis.horizontal,
-                              children: [
-                                promoCard('assets/images/four.jpg'),
-                                promoCard('assets/images/three.jpg'),
-                                promoCard('assets/images/two.jpg'),
-                                promoCard('assets/images/one.jpg'),
-                              ],
-                            ),
-                          ),
-                          const SizedBox(
-                            height: 20,
-                          ),
-                          Container(
-                            height: 150,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(20),
-                              image: const DecorationImage(
-                                image: AssetImage('assets/images/three.jpg'),
-                              ),
-                            ),
-                            child: Container(
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(20),
-                                gradient: LinearGradient(
-                                  colors: [
-                                    Colors.black.withOpacity(.6),
-                                    Colors.black.withOpacity(.1),
-                                  ],
-                                  begin: Alignment.bottomRight,
-                                  stops: const [
-                                    0.3,
-                                    0.9,
-                                  ],
-                                ),
-                              ),
-                              child: const Align(
-                                alignment: Alignment.bottomLeft,
-                                child: Padding(
-                                  padding: EdgeInsets.all(15),
-                                  child: Text(
-                                    'Best Design',
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 20,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
+                          promoCard('assets/images/four.jpg'),
+                          promoCard('assets/images/three.jpg'),
+                          promoCard('assets/images/two.jpg'),
+                          promoCard('assets/images/one.jpg'),
                         ],
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    Container(
+                      height: 150,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        image: const DecorationImage(
+                          image: AssetImage('assets/images/three.jpg'),
+                        ),
+                      ),
+                      child: Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20),
+                          gradient: LinearGradient(
+                            colors: [
+                              Colors.black.withOpacity(.6),
+                              Colors.black.withOpacity(.1),
+                            ],
+                            begin: Alignment.bottomRight,
+                            stops: const [
+                              0.3,
+                              0.9,
+                            ],
+                          ),
+                        ),
+                        child: Align(
+                          alignment: Alignment.bottomLeft,
+                          child: Padding(
+                            padding: const EdgeInsets.all(15),
+                            child: Text(
+                              'Best Design',
+                              style: TextStyle(
+                                color: whiteColor,
+                                fontSize: 20,
+                              ),
+                            ),
+                          ),
+                        ),
                       ),
                     ),
                   ],
